@@ -1,0 +1,39 @@
+#inline-elements {
+  background: $section-bg-color;
+  padding: 50px 0;
+  .section-title {
+    color: $primary-color;
+    font-size: $section-title-font-size;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 40px;
+    text-transform: uppercase;
+  }
+  .flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .col-1 {
+      flex-basis: 23%;
+      padding-left: $gutter-width / 2;
+      padding-right: $gutter-width / 2;
+    }
+    .inline-elem-padding-top {
+      padding-top: 30px;
+    }
+  }
+  .inline-content {
+    padding: 50px 0;
+  }
+  .inline-heading {
+    color: $primary-color;
+    font-size: $content-heading-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .inline-p {
+    color: $primary-color;
+    font-size: $content-paragraph-font-size;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,132 @@
+// Desktop
+@media screen and (min-width: 1300px) {
+  .container {
+    margin: auto;
+    text-align: center;
+    width: $desktop-container;
+  }
+  .side-paragraph {
+    max-height: 145px !important;
+  }
+  .middle-paragraph {
+    max-height: 110px !important;
+  }
+  .footer-paragraph {
+    max-height: 80px !important;
+  }
+}
+// Tablet
+@media screen and (min-width: 768px) and (max-width: 1299px) {
+  .container {
+    margin: auto;
+    text-align: center;
+    width: $tablet-container;
+  }
+  // Flex
+  .col-1 {
+    flex-basis: 46% !important;
+  }
+  .half-col {
+    flex-basis: 100% !important;
+  }
+  .flex-footer {
+    justify-content: space-between !important;
+  }
+  .flex-footer-items {
+    flex-basis: 23% !important;
+  }
+  .side-paragraph {
+    max-height: 197px !important;
+  }
+  .middle-paragraph {
+    max-height: 161px !important;
+  }
+  .trucker {
+    display: none;
+  }
+  .form-col {
+    flex-basis: 50% !important;
+  }
+  .footer-paragraph {
+    max-height: 118px !important;
+  }
+}
+// Mobile
+@media screen and(max-width: 767px) {
+  // Header
+  .header-logo {
+    width: 260px !important;
+  }
+  .header-title {
+    font-size: $mobile-header-title-font-size !important;
+    line-height: 40px !important;
+  }
+  .header-subtitle {
+    font-size: $mobile-header-subtitle-font-size !important;
+  }
+  .header-p {
+    font-size: $mobile-header-p-font-size !important;
+    line-height: 22px !important;
+  }
+  .divider {
+    width: 40px !important;
+  }
+  // Flex
+  .col-1, .col-3, .form-col, .privacy, .flex-footer-items {
+    flex-basis: 100% !important;
+  }
+  // Inline elements
+  .section-title {
+    font-size: $mobile-section-title-font-size !important;
+  }
+  .inline-heading {
+    font-size: $mobile-content-heading-font-size !important;
+  }
+  .inline-p {
+    font-size: $mobile-content-paragraph-font-size !important;
+  }
+  // Accent
+  #accent > .container {
+    background: $form-div-bg-color;
+  }
+  .description-col {
+    display: none !important;
+  }
+  .modal-content {
+    height: 274px !important;
+    padding: 25px !important;
+    width: 100% !important;
+    .modal-heading {
+      font-size: $mobile-section-title-font-size !important;
+    }
+    .modal-paragraph {
+      font-size: $mobile-content-paragraph-font-size !important;
+    }
+  }
+  // Last
+  .last-heading {
+    font-size: $mobile-content-heading-font-size !important;
+  }
+  .last-p {
+    font-size: $mobile-content-paragraph-font-size !important;
+  }
+  .side-paragraph {
+    max-height: 120px !important;
+  }
+  .middle-paragraph {
+    max-height: 106px !important;
+  }
+  // Footer
+  .flex-footer {
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+  }
+  .footer-paragraph {
+    max-height: 46px !important;
+  }
+  .container {
+    padding: 0 $mobile-padding;
+    text-align: center;
+    width: $mobile-container;
+  }
+}

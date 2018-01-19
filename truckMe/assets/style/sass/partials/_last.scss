@@ -1,0 +1,31 @@
+#last {
+  background: #fff;
+}
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  .col-3 {
+    flex-basis: 30%;
+    padding-left: $gutter-width / 2;
+    padding-right: $gutter-width / 2;
+  }
+}
+.last-content {
+  padding-top: 50px;
+}
+.last-elem {
+  text-align: left;
+  .last-heading {
+    color: $primary-color;
+    font-size: $content-heading-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .last-p {
+    color: $primary-color;
+    font-size: $content-paragraph-font-size;
+    line-height: 24px;
+    overflow: hidden;
+  }
+}

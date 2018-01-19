@@ -1,0 +1,21 @@
+.navbar {
+  background: $primary-color;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  .navbar-content {
+    padding-top: 20px;
+  }
+  .flex {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex-end {
+    justify-content: flex-end;
+  }
+  .logo {
+    margin-right: auto;
+  }
+}
