@@ -1,0 +1,22 @@
+body {
+    background-color: #dadada;
+}
+body > .grid {
+    height: 100%;
+}
+.column {
+    max-width: 75%;
+}
+.container {
+    margin-top: 5%;
+}
+.ui.button {
+    background-color: #ff5722;
+    color: #fff;
+}
+.ui.form .inline.field>input {
+    width: 70%;
+}
+.ui.form textarea {
+    width: 75%;
+}

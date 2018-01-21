@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Wikipedia Search</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <h1 class="navbar-brand">Wikipedia search</h1>
+            </div>
+        </nav>
+    </div>
+    <!-- Main content -->
+    <div class="container text-center main-section">
+        <h1>What do you want to know?</h1>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                <div class="input-group">
+                    <input type="text" class="form-control search-bar" id="search-for" placeholder="Search Wikipedia">
+                    <span class="input-group-btn">
+              <button class="btn btn-default" id="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </span>
+                </div>
+            </div>
+        </div>
+        <a class="random-search" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Click here for a random search</a>
+        <div class="row" id="search-result">
+            <!-- Search results will be shown here -->
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="text-left left-footer">
+            <p>&copy; Marko Nikolajević</p>
+        </div>
+        <div class="text-right right-footer">
+            <a href="https://markonikolajevic.github.io/portfolio/" target="_blank" title="Github"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+            <a href="https://it.linkedin.com/in/markonikolajevic" target="_blank" title="LinkedIn"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+            <a href="https://codepen.io/mark3z/#" target="_blank" title="Codepen"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a>
+            <a href="https://www.codecademy.com/Mark3z" target="_blank" title="Codecademy"><i class="fa fa-code fa-2x" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

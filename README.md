@@ -9,9 +9,17 @@ Tools:
 * [Sass](http://sass-lang.com/)
 * [jQuery](http://jquery.com/)
 
+### Travel World
+
 ### Newsweek
 I recreate the homepage of Newsweek site.
 
 Tools:
 
 * [Materialize](http://materializecss.com/)
+
+### Multi page survey form
+
+### Wikipedia search
+
+### Random quote generator
