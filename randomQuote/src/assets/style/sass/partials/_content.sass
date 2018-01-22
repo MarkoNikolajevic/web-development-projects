@@ -1,0 +1,49 @@
+.content-div
+  font-family: $typeface
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 10vh 0
+  background: $mainBg
+  height: 90vh
+  .title
+    color: $whiteText
+    font-size: $title
+    letter-spacing: 2px
+  blockquote
+    color: $whiteText
+    background: $blockquoteBg
+    padding: 2vw
+    border-radius: 5px
+    #quote
+      font-size: $quote
+      letter-spacing: 1.5px
+    #author
+      font-size: $author
+      letter-spacing: 1.5px
+  .buttons
+    display: flex
+    flex-flow: row nowrap
+    button
+      color: $whiteText
+      margin: 2vh 2vw
+      height: 40px
+      width: 120px
+      border-radius: 4px
+      cursor: pointer
+      transition: all 500ms ease-in-out
+      outline-style: none
+      &:hover
+        transform: translateY(-2px)
+    .new-quote
+      background: $nextBtn
+      border-color: $nextBtn
+      &:hover
+        background: darken($nextBtn, 10)
+        border-color: darken($nextBtn, 10)
+    .tweet
+      background: $twitterBtn
+      border-color: $twitterBtn
+      &:hover
+        background: darken($twitterBtn, 15)
+        border-color: darken($twitterBtn, 15)
