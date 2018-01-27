@@ -2,7 +2,6 @@
 
 const gulp = require("gulp");
 const imagemin = require("gulp-imagemin");
-const htmlmin = require("gulp-htmlmin");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const pump = require("pump");
@@ -17,15 +16,6 @@ gulp.task("optimizeImg", () =>
     .pipe(imagemin())
     .pipe(gulp.dest("dist/assets/img"))
 );
-
-// Minify html
-gulp.task("minifyHtml", function() {
-  return gulp.src('src/index.html')
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
-    .pipe(gulp.dest('dist/'));
-});
 
 // Compile sass and minify
 gulp.task("sass", function() {
@@ -61,15 +51,15 @@ gulp.task("minifyJs", function(cb) {
 });
 
 // Browser Sync
-gulp.task("serve", ["minifyHtml", "sass", "minifyJs"], function() {
+gulp.task("serve", ["sass", "minifyJs"], function() {
   browserSync.init({
     server: {
-      index: "dist/index.html"
+      index: "index.html"
     }
   });
   gulp.watch("src/assets/style/sass/**/*.sass", ["sass"]);
   gulp.watch("src/assets/js/*.js", ["minifyJs"]);
-  gulp.watch("src/index.html", ["minifyHtml"]).on("change", browserSync.reload);
+  gulp.watch("src/index.html").on("change", browserSync.reload);
 });
 
 // Default
