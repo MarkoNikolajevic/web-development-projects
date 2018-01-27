@@ -1,36 +1,75 @@
+/*jshint esversion: 6 */
+
 const gulp = require("gulp");
 const imagemin = require("gulp-imagemin");
+const htmlmin = require("gulp-htmlmin");
 const sass = require("gulp-sass");
+const uglify = require("gulp-uglify");
+const pump = require("pump");
 const autoprefixer = require("gulp-autoprefixer");
+const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
+const rename = require("gulp-rename");
 
 // Optimize images
-gulp.task("optimizeImg", function() {
-  gulp.src("assets/img/*")
+gulp.task("optimizeImg", () =>
+  gulp.src("src/assets/img/*")
     .pipe(imagemin())
-    .pipe(gulp.dest("dist/assets/img"));
+    .pipe(gulp.dest("dist/assets/img"))
+);
+
+// Minify html
+gulp.task("minifyHtml", function() {
+  return gulp.src('src/index.html')
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
+    .pipe(gulp.dest('dist/'));
 });
 
-// Compile scss files into css and use browser-sync
+// Compile sass and minify
 gulp.task("sass", function() {
-  return gulp.src("assets/style/sass/**/*.sass")
-    .pipe(sass())
-    .pipe(gulp.dest("dist/assets/style/"))
-    .pipe(autoprefixer({
-      browsers: "last 15 versions"
+  return gulp.src("src/assets/style/sass/**/*.sass")
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      outputStyle: "compressed"
     }))
+    .on("error", sass.logError)
+    .pipe(autoprefixer({
+      browsers: "last 5 versions"
+    }))
+    .pipe(rename({
+      suffix: ".min"
+    }))
+    .pipe(sourcemaps.write("./"))
+    .pipe(gulp.dest("dist/assets/style/css"))
     .pipe(browserSync.stream());
 });
 
+// Minify js files
+gulp.task("minifyJs", function(cb) {
+  pump([
+    gulp.src("src/assets/js/*.js"),
+    sourcemaps.init(),
+    uglify(),
+    rename({
+      suffix: ".min"
+    }),
+    gulp.dest("dist/assets/js"),
+    browserSync.stream()
+  ], cb);
+});
+
 // Browser Sync
-gulp.task("serve", ["sass"], function() {
+gulp.task("serve", ["minifyHtml", "sass", "minifyJs"], function() {
   browserSync.init({
     server: {
-      index: "index.html"
+      index: "dist/index.html"
     }
   });
-  gulp.watch("assets/style/sass/**/*.sass", ["sass"]);
-  gulp.watch("*.html").on("change", browserSync.reload);
+  gulp.watch("src/assets/style/sass/**/*.sass", ["sass"]);
+  gulp.watch("src/assets/js/*.js", ["minifyJs"]);
+  gulp.watch("src/index.html", ["minifyHtml"]).on("change", browserSync.reload);
 });
 
 // Default

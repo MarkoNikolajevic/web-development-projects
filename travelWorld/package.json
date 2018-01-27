@@ -1,19 +1,23 @@
 {
-  "name": "travelworld",
+  "name": "travelWorld",
   "version": "1.0.0",
-  "description": "A template for a travel/camping site which offers tours etc",
+  "description": "Landing page for a travel/camping company",
   "main": "index.js",
   "scripts": {
+    "build": "css-gridish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Marko Nikolajevic",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.21.0",
+    "browser-sync": "^2.23.5",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-imagemin": "^4.0.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.12.1",
     "gulp-uglify": "^3.0.0"
   }
 }
