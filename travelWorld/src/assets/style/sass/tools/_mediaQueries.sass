@@ -13,6 +13,32 @@
   .hide-on-phone
     display: none
 
+@media only screen and (max-device-width: 767px)
+  header
+    background-attachment: scroll
+
+  .nav-links
+    font-size: $navLinksFontMobile !important
+
+  .header-title
+    font-size: $headerTitleFontMobile !important
+
+  .header-subtitle
+    font-size: $headerSubtitleFontMobile !important
+
+  .section-title
+    font-size: $sectionTitleFontMobile !important
+
+  .card-title
+    font-size: $cardTitleFontMobile !important
+
+  .card-role
+    font-size: $cardRoleFontMobile !important
+
+  .tour-desc
+    font-size: $tourDescFontMobile !important
+    
+
 // Tablets
 @media screen and (min-width: 601px) and (max-width: 1199px)
   .container
@@ -21,9 +47,6 @@
 
   .tablet-grid
     grid-template-columns: repeat(2, 1fr)
-
-  .parallax
-    background-attachment: scroll
 
 // Laptops/Desktop
 @media screen and (min-width: 1200px)

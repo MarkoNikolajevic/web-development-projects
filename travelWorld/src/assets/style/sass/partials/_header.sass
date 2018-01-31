@@ -1,16 +1,22 @@
 header
-  background-attachment: fixed
-  background-image: url("../../img/mainImg.jpeg")
-  background-position: center center
-  background-repeat: no-repeat
-  background-size: cover
+  background:
+    attachment: fixed
+    image: url("../../img/mainImg.jpeg")
+    position: center center
+    repeat: no-repeat
+    size: cover
+    
   height: 90vh
   justify-content: center
   align-items: center
   color: $primaryTextColor
   text-align: center
   .header-title
+    font-size: $headerTitleFont
     text-transform: uppercase
     letter-spacing: 2px
   .header-subtitle
     letter-spacing: 1.5px
+    font-size: $headerSubtitleFont
+    margin-left: 5vw
+    margin-right: 5vw
